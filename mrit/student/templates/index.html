@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    
+</head>
+<body>
+    <div>
+        <h1>Student List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student id</th>
+                    <th>Name</th>
+                    <th>gender</th>
+                    <th>DOB</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.gender}}</td>
+                    <td>{{student.dob}}</td>
+                    <td>{{student.addres}}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No student available </td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Form</h1>
+    <div>
+        <p>Name: <input type="text" name="name" id="name"></p>
+        <p>Gender: <input type="text" name="gender" id="gender"></p>
+        <p>Date of Birth: <input type="date" name="dob" id="dob"></p>
+        <p>Addres: <input type="text" name="addres" id="addres"></p>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</body>
+</html>
